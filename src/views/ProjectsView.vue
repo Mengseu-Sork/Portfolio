@@ -39,6 +39,36 @@ const expandedProjects = ref([]);
 const projects = [
   {
     id: 1,
+    name: "Fruit Shop Website",
+    description:
+      "An online platform for browsing, purchasing, and managing fresh fruits with user-friendly interfaces and real-time stock updates.",
+    image: "/image/Vue_website.jpg",
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Tailwind",
+      "VueJS",
+      "Git",
+      "GitHub",
+      "Vercel",
+    ],
+    role: "Individual",
+    status: "live",
+    duration: "2 weeks",
+    teamSize: "1 people",
+    liveUrl: "https://interface-pearl-two.vercel.app/",
+    repositoryUrl: "https://github.com/Mengseu-Sork/Interface",
+    details: [
+      "Implemented real-time inventory tracking system",
+      "Created comprehensive sales analytics dashboard",
+      "Developed customer management features",
+      "Built automated reporting system",
+      "Integrated payment processing",
+    ],
+  },
+  {
+    id: 2,
     name: "Cafe Shop Management System",
     description:
       "A comprehensive management system for cafe operations with revenue analysis and inventory tracking.",
@@ -70,12 +100,21 @@ const projects = [
     ],
   },
   {
-    id: 2,
+    id: 3,
     name: "Music App Player",
     description:
       "A sleek and responsive music streaming app featuring real-time audio playback, personalized playlists, and seamless user experience.",
     image: "/image/music_app.png",
-    technologies: ["HTML", "CSS", "JavaScript", "Firebase", "Bootstrap", "GitHub", "Git"],
+    technologies: [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Firebase",
+      "Bootstrap",
+      "GitHub",
+      "Git",
+      "Netlify",
+    ],
     role: "Team Lead",
     status: "live",
     duration: "2 weeks",
@@ -91,7 +130,7 @@ const projects = [
     ],
   },
   {
-    id: 3,
+    id: 4,
     name: "Web Scraping Aotumation",
     description:
       "An automated tool that scrapes academic data and generates formatted certificates, transcripts, and official letters on demand.",
@@ -112,12 +151,12 @@ const projects = [
     ],
   },
   {
-    id: 4,
+    id: 5,
     name: "Library Website",
     description:
       "A user-friendly web platform that allows members to browse books, manage borrowing records, and track library activities.",
     image: "/image/library.jpg",
-    technologies: ["HTML", "CSS", "Sass", "Git", "GitHub", "Figma"],
+    technologies: ["HTML", "CSS", "Sass", "Git", "GitHub", "Figma", "Firebase"],
     role: "Team Lead",
     status: "live",
     duration: "2 weeks",
