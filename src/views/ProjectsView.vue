@@ -161,7 +161,7 @@ const projects = [
     status: "live",
     duration: "2 weeks",
     teamSize: "3 people",
-    liveUrl: "https://mengseu-student.site/",
+    liveUrl: "https://library-c6.netlify.app/",
     repositoryUrl: "https://github.com/Mengseu-Sork/Library-C6",
     details: [
       "Automated certificate generation from Excel data",
