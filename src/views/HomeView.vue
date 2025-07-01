@@ -37,7 +37,9 @@
             {{ p1 }}
           </p>
 
-          <div class="flex space-x-4 mb-8 animate-fadeInUp animation-delay-700">
+          <div
+            class="flex flex-wrap justify-center md:justify-start gap-4 sm:gap-4 space-x-4 mb-8 animate-fadeInUp animation-delay-700"
+          >
             <a
               v-for="(social, index) in socialLinks"
               :key="social.name"
@@ -49,14 +51,14 @@
             </a>
           </div>
           <div
-            class="flex flex-row sm:flex-row gap-4 sm:gap-6 md:gap-6 animate-fadeInUp animation-delay-1000 px-0 sm:px-0"
+            class="flex flex-col sm:flex-row gap-4 sm:gap-6 md:gap-6 animate-fadeInUp animation-delay-1000 px-8 sm:px-0"
           >
             <Button
               :disabled="isDownloading"
               :show-download="true"
               :is-downloading="isDownloading"
               @click="downloadCV"
-              class="w-1/2 sm:w-auto px-1 sm:px-6 flex items-center justify-center text-sm"
+              class="w-full sm:w-auto text-xl flex items-center justify-center"
               p-0
             >
               {{ isDownloading ? "Generating PDF..." : "Download CV" }}
@@ -64,7 +66,7 @@
 
             <a
               href="#contact"
-              class="w-1/2 sm:w-auto flex items-center justify-center border-2 border-sky-500 text-sky-600 px-8 py-3 rounded-full font-semibold hover:bg-sky-50 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              class="w-full sm:w-auto text-xl flex items-center justify-center border-2 border-sky-500 text-sky-600 px-8 py-3 rounded-full font-semibold hover:bg-sky-50 transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Contact Me
             </a>

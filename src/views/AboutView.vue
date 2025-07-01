@@ -16,7 +16,7 @@
         <div class="order-1 md:order-1" ref="aboutImage">
           <div class="relative group">
             <div
-              class="w-[430px] h-[430px] mx-auto rounded-2xl overflow-hidden shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
+              class="w-[330px] h-[330px] md:w-[430px] md:h-[430px] mx-auto rounded-2xl overflow-hidden shadow-2xl transform group-hover:scale-105 transition-transform duration-500"
             >
               <img
                 src="../assets/image/picture.jpg"
