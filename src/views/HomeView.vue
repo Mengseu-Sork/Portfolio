@@ -26,17 +26,17 @@
             <span
               ref="typingText"
               class="bg-gradient-to-r from-sky-600 via-blue-600 to-purple-600 bg-clip-text text-transparent animate-gradient-x"
-              >{{ displayText }}</span
             >
+              {{ displayText }}
+            </span>
             <span class="animate-blink">|</span>
           </h1>
           <p
             class="text-lg text-gray-600 mb-8 max-w-lg animate-fadeInUp animation-delay-500"
           >
-            A passionate Web Developer based in Cambodia, creating modern and responsive
-            web applications. Currently studying Computer Science at Passerelles
-            Numériques Cambodia.
+            {{ p1 }}
           </p>
+
           <div class="flex space-x-4 mb-8 animate-fadeInUp animation-delay-700">
             <a
               v-for="(social, index) in socialLinks"
@@ -49,19 +49,22 @@
             </a>
           </div>
           <div
-            class="flex flex-col sm:flex-row gap-4 animate-fadeInUp animation-delay-1000"
+            class="flex flex-row sm:flex-row gap-4 sm:gap-6 md:gap-6 animate-fadeInUp animation-delay-1000 px-0 sm:px-0"
           >
             <Button
               :disabled="isDownloading"
               :show-download="true"
               :is-downloading="isDownloading"
               @click="downloadCV"
+              class="w-1/2 sm:w-auto px-1 sm:px-6 flex items-center justify-center text-sm"
+              p-0
             >
               {{ isDownloading ? "Generating PDF..." : "Download CV" }}
             </Button>
+
             <a
               href="#contact"
-              class="border-2 border-sky-500 text-sky-600 px-8 py-3 rounded-full font-semibold hover:bg-sky-50 transition-all duration-300 hover:scale-105 hover:shadow-lg"
+              class="w-1/2 sm:w-auto flex items-center justify-center border-2 border-sky-500 text-sky-600 px-8 py-3 rounded-full font-semibold hover:bg-sky-50 transition-all duration-300 hover:scale-105 hover:shadow-lg"
             >
               Contact Me
             </a>
@@ -71,22 +74,22 @@
           <div class="relative">
             <div class="absolute inset-0 animate-spin-slow">
               <div
-                class="w-[500px] h-[500px] border-2 border-sky-300/30 rounded-full"
+                class="w-[352px] h-[352px] md:w-[450px] md:h-[450px] border-2 border-sky-300/30 rounded-full"
               ></div>
             </div>
             <div class="absolute inset-4 animate-spin-reverse">
               <div
-                class="w-[460px] h-[460px] border-2 border-purple-300/30 rounded-full border-dashed"
+                class="w-[340px] h-[340px] md:w-[430px] md:h-[430px] border-2 border-purple-300/30 rounded-full border-dashed"
               ></div>
             </div>
             <div
-              class="w-96 h-96 md:w-[450px] md:h-[450px] bg-gradient-to-br from-sky-300 via-blue-400 to-purple-500 rounded-full shadow-2xl animate-gradient-rotate"
+              class="w-80 h-80 md:w-[420px] md:h-[420px] bg-gradient-to-br from-sky-300 via-blue-400 to-purple-500 rounded-full shadow-2xl animate-gradient-rotate"
             ></div>
             <div class="absolute inset-0 flex items-end justify-center">
               <img
                 src="../assets/image/img.jpg"
                 alt="Soda Morn - Web Developer"
-                class="w-80 h-80 md:w-96 md:h-96 object-cover rounded-full border-6 border-white shadow-2xl transform hover:scale-105 transition-transform duration-500 animate-float-gentle"
+                class="w-72 h-72 md:w-96 md:h-96 object-cover rounded-full border-6 border-white shadow-2xl transform hover:scale-105 transition-transform duration-500 animate-float-gentle"
               />
             </div>
             <div
@@ -121,7 +124,9 @@ const displayText = ref("");
 const typingText = ref(null);
 const isDownloading = ref(false);
 const showDownloadToast = ref(false);
-
+const p1 = ref(
+  "A passionate Web Developer based in Cambodia, creating modern and responsive web applications. Currently studying Computer Science at Passerel lesNumériques Cambodia."
+);
 const iconMap = {
   Github,
   Linkedin,
@@ -144,8 +149,8 @@ const downloadCV = async () => {
   isDownloading.value = true;
   try {
     const link = document.createElement("a");
-    link.href = "/Mengseu Sork CL & CV.pdf";
-    link.download = "Mengseu Sork CL & CV.pdf";
+    link.href = "/Mengseu Sork CL&CV.pdf";
+    link.download = "/Mengseu Sork CL&CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -163,7 +168,7 @@ const downloadCV = async () => {
 };
 
 const typeText = async () => {
-  const texts = ["Web Developer"];
+  const texts = ["Mengseu Sork", "Web Developer"];
   let textIndex = 0;
   while (true) {
     const currentText = texts[textIndex];

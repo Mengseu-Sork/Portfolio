@@ -121,47 +121,16 @@
           Code
         </a>
       </div>
-      <button
-        v-if="project.details"
-        @click="toggleDetails"
-        class="w-full mt-3 text-sky-600 hover:text-sky-800 transition-colors duration-300 text-sm font-medium"
-      >
-        {{ expanded ? "Show Less" : "Show More" }}
-      </button>
-      <div
-        v-if="project.details && expanded"
-        class="mt-4 p-4 bg-sky-50 rounded-lg animate-fadeInUp"
-      >
-        <h4 class="font-semibold text-gray-900 mb-2">Project Details</h4>
-        <ul class="text-sm text-gray-600 space-y-1">
-          <li
-            v-for="detail in project.details"
-            :key="detail"
-            class="flex items-start gap-2"
-          >
-            <div class="w-1.5 h-1.5 bg-sky-500 rounded-full mt-2 flex-shrink-0"></div>
-            {{ detail }}
-          </li>
-        </ul>
-      </div>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, defineProps, defineEmits } from "vue";
-import { Folder, ExternalLink, Github, Calendar, Users } from "lucide-vue-next";
-
 defineProps({
   project: Object,
   index: Number,
 });
 
 const emit = defineEmits(["toggleDetails"]);
-const expanded = ref(false);
-
-const toggleDetails = () => {
-  expanded.value = !expanded.value;
-  emit("toggleDetails", expanded.value);
-};
 </script>

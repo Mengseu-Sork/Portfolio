@@ -13,7 +13,7 @@
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" ref="projectsGrid">
         <Card
-          v-for="(project, index) in projects"
+          v-for="(project, index) in displayedProjects"
           :key="project.id"
           :project="project"
           :index="index"
@@ -22,6 +22,7 @@
       </div>
       <div class="text-center mt-12">
         <button
+          @click="showAll = true"
           class="bg-gradient-to-r from-sky-500 via-blue-600 to-purple-600 text-white px-8 py-3 rounded-full font-semibold hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 hover:scale-105"
         >
           View All Projects
@@ -32,9 +33,10 @@
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import Card from "@/components/Card.vue";
 
+const showAll = ref(false);
 const expandedProjects = ref([]);
 const projects = [
   {
@@ -59,13 +61,6 @@ const projects = [
     teamSize: "1 people",
     liveUrl: "https://interface-pearl-two.vercel.app/",
     repositoryUrl: "https://github.com/Mengseu-Sork/Interface",
-    details: [
-      "Implemented real-time inventory tracking system",
-      "Created comprehensive sales analytics dashboard",
-      "Developed customer management features",
-      "Built automated reporting system",
-      "Integrated payment processing",
-    ],
   },
   {
     id: 2,
@@ -91,13 +86,6 @@ const projects = [
     teamSize: "5 people",
     liveUrl: null,
     repositoryUrl: "https://github.com/Mengseu-Sork/VC1-G7",
-    details: [
-      "Implemented real-time inventory tracking system",
-      "Created comprehensive sales analytics dashboard",
-      "Developed customer management features",
-      "Built automated reporting system",
-      "Integrated payment processing",
-    ],
   },
   {
     id: 3,
@@ -121,13 +109,6 @@ const projects = [
     teamSize: "3 people",
     liveUrl: "https://creative-pixie-beb05b.netlify.app/",
     repositoryUrl: "https://github.com/Mengseu-Sork/MUSIC-PLAYER-APP_-G11",
-    details: [
-      "Designed and built a responsive music player UI",
-      "Implemented real-time audio playback controls (play, pause, next, prev)",
-      "Integrated playlist and queue management",
-      "Added user login and profile support",
-      "Connected with third-party audio APIs for streaming",
-    ],
   },
   {
     id: 4,
@@ -142,13 +123,6 @@ const projects = [
     teamSize: "3 people",
     liveUrl: null,
     repositoryUrl: "https://github.com/Mengseu-Sork/WEB-SCRAPING-AUTOMATION",
-    details: [
-      "Automated certificate generation from Excel data",
-      "Created customizable document templates",
-      "Implemented batch processing capabilities",
-      "Built user-friendly GUI interface",
-      "Added PDF export functionality",
-    ],
   },
   {
     id: 5,
@@ -163,13 +137,6 @@ const projects = [
     teamSize: "3 people",
     liveUrl: "https://library-c6.netlify.app/",
     repositoryUrl: "https://github.com/Mengseu-Sork/Library-C6",
-    details: [
-      "Automated certificate generation from Excel data",
-      "Created customizable document templates",
-      "Implemented batch processing capabilities",
-      "Built user-friendly GUI interface",
-      "Added PDF export functionality",
-    ],
   },
 ];
 
@@ -181,4 +148,8 @@ const toggleProjectDetails = (projectId) => {
     expandedProjects.value.push(projectId);
   }
 };
+
+const displayedProjects = computed(() =>
+  showAll.value ? projects : projects.slice(0, 3)
+);
 </script>
