@@ -17,7 +17,7 @@
         <div class="order-2 md:order-1 animate-slideInLeft">
           <div class="mb-6">
             <span
-              class="text-sky-600 font-semibold text-xl tracking-wide uppercase animate-fadeInUp"
+              class="text-sky-600 font-semibold text-4xl tracking-wide uppercase animate-fadeInUp"
               >Welcome!</span
             >
           </div>
