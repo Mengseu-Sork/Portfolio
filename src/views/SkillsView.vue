@@ -135,7 +135,7 @@
       </div>
       <div ref="softSkillsSection">
         <h3 class="text-2xl font-semibold text-gray-900 mb-8 text-center">Soft Skills</h3>
-        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-8">
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-8">
           <div
             v-for="(softSkill, index) in softSkills"
             :key="softSkill"
@@ -223,9 +223,11 @@ const softSkills = [
   "Teamwork",
   "Problem-solving",
   "Time Management",
+  "Task Management",
   "Critical Thinking",
-  "Creativity",
+  "Creative",
   "Adaptability",
+  "Collaboration",
 ];
 
 const handleImageError = (skillName) => {
